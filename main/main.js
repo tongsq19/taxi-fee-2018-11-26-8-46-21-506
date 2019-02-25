@@ -20,5 +20,6 @@
 // }
 
 module.exports = function main(distance_in_km, time_in_minute) {
-    return 0;
+    let base_fee = 6;
+    return base_fee;
 };
