@@ -41,6 +41,13 @@ describe('taxi fee', function() {
         expect(result).to.equal(expected);
     });
 
+    it("停车等待加收每分钟0.25元", function() {
+        let distance = 0;
+        let time = 2;
+        let expected = Math.round(6 + 2*0.25);
+        let result = main(distance, time);
+        expect(result).to.equal(expected);
+    });
 });
 
 // describe('taxi fee', function () {
