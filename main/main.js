@@ -23,6 +23,8 @@ module.exports = function main(distance_in_km, time_in_minute) {
     let base_fee = 6;
     if(distance_in_km <= 2)
         return base_fee;
-    if(distance_in_km > 2)
+    if(distance_in_km <= 8)
         return Math.round(base_fee + 0.8*(distance_in_km -2) );
+    if(distance_in_km > 8)
+        return Math.round(base_fee + 1.2*(distance_in_km -8) + 0.8 * 6);
 };
