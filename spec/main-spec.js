@@ -15,7 +15,16 @@ describe('taxi fee', function() {
        let expected = 6;
        let result = main(distance, time);
        expect(result).to.equal(expected);
-   })
+   });
+
+   it("超出2公里不到8公里，运价每公里0.8元", function() {
+       let distance = 3;
+       let time = 0;
+       let expected = Math.round(6 + 0.8);
+       let result = main(distance, time);
+       expect(result).to.equal(expected);
+    });
+
 });
 
 // describe('taxi fee', function () {
