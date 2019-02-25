@@ -25,6 +25,22 @@ describe('taxi fee', function() {
        expect(result).to.equal(expected);
     });
 
+    it("超出8公里，8公里起会加收50%的每公里运价", function() {
+        let distance = 9;
+        let time = 0;
+        let expected = Math.round(6 + 6*0.8 + 1.2);
+        let result = main(distance, time);
+        expect(result).to.equal(expected);
+    });
+
+    it("超出8公里，8公里起会加收50%的每公里运价", function() {
+        let distance = 10;
+        let time = 0;
+        let expected = Math.round(6 + 6*0.8 + 2*1.2);
+        let result = main(distance, time);
+        expect(result).to.equal(expected);
+    });
+
 });
 
 // describe('taxi fee', function () {
